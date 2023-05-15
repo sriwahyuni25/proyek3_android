@@ -38,7 +38,9 @@ class HomePage extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 25,),
+          SizedBox(
+            height: 25,
+          ),
 
           // card -> bagaimana perasaan anda
           Padding(
@@ -56,6 +58,10 @@ class HomePage extends StatelessWidget {
                     height: 100,
                     width: 100,
                     color: primaryColor,
+                    /*child: Image.asset(
+                      'assets/images/example.png', // Replace with your image path
+                      fit: BoxFit.cover, // Adjust the fit based on your needs
+                    ),*/
                   ),
 
                   SizedBox(width: 20),
@@ -72,9 +78,7 @@ class HomePage extends StatelessWidget {
                             fontWeight: semiBold,
                           ),
                         ),
-
                         SizedBox(height: 12),
-
                         Text(
                           'Periksa gejala yang anda rasakan sekarang',
                           style: primaryTextStyle.copyWith(
@@ -82,11 +86,9 @@ class HomePage extends StatelessWidget {
                             fontWeight: regular,
                           ),
                         ),
-
                         SizedBox(height: 12),
-
                         Container(
-                          padding: EdgeInsets.all(12),
+                          /*padding: EdgeInsets.all(12),
                           decoration: BoxDecoration(
                             color: primaryColor,
                             borderRadius: BorderRadius.all(
@@ -99,6 +101,30 @@ class HomePage extends StatelessWidget {
                               'Periksa',
                               style: primaryTextStyle,
                             ),
+                          ),
+                        ),*/
+                          padding: EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: primaryColor,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(12),
+                            ),
+                          ),
+                          child: TextButton(
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/home'); //menuju fitur diagnosa
+                            },
+                            style: TextButton.styleFrom(
+                              backgroundColor: primaryColor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                            child: Text('Periksa',
+                                style: primaryTextStyle.copyWith(
+                                  fontSize: 16,
+                                  fontWeight: medium,
+                                )),
                           ),
                         ),
                       ],
